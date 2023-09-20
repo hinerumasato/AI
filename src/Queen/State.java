@@ -1,7 +1,6 @@
 package Queen;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,10 +12,6 @@ public class State {
     public State(int size) {
         this.size = size;
         this.columns = new ArrayList<Integer>();
-
-        // Test
-        // this.size = 4;
-        // this.columns = new ArrayList<Integer>(Arrays.asList(1, 3, 0, 2));
     }
 
     public int getSize() {
