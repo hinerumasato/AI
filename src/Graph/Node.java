@@ -76,36 +76,6 @@ public class Node {
         this.visited = visited;
     }
 
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Node other = (Node) obj;
-        if (object == null) {
-            if (other.object != null)
-                return false;
-        } else if (!object.equals(other.object))
-            return false;
-        if (parent == null) {
-            if (other.parent != null)
-                return false;
-        } else if (!parent.equals(other.parent))
-            return false;
-        if (neighbors == null) {
-            if (other.neighbors != null)
-                return false;
-        } else if (!neighbors.equals(other.neighbors))
-            return false;
-        if (visited != other.visited)
-            return false;
-        return true;
-    }
-
     @Override
     public String toString() {
         return "Node [object=" + object +"]";

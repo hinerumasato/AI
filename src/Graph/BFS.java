@@ -27,6 +27,14 @@ public class BFS {
         return result;
     }
 
+    public void setVisitedFalseAll(Node start) {
+        start.setVisited(false);
+        for (Node node : start.getNeighbors()) {
+            if(node.isVisited())
+                setVisitedFalseAll(node);
+        }
+    }
+
     public List<Node> bfsFindPath(Node start, Node goal) {
         if(start.equals(goal))
             return new ArrayList<Node>(Arrays.asList(start));

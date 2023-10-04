@@ -37,15 +37,6 @@ public class State {
     public boolean isGoalState() {
         if(columns.size() < size)
             return false;
-        // int[][] board = new int[columns.size()][columns.size()];
-        // for(int i = 0; i < columns.size(); i++)
-        //     board[i][columns.get(i)] = 1;
-
-        // for(int i = 0; i < board.length; i++) {
-        //     for(int j = 0; j < board[i].length; j++)
-        //         System.out.print(board[i][j] + " ");
-        //     System.out.println();
-        // }
 
         Set<Integer> set = new HashSet<Integer>(columns);
         for(int i = 0; i < columns.size() - 1; i++) {

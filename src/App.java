@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import Graph.BFS;
 import Graph.Node;
@@ -33,10 +34,15 @@ public class App {
     }
 
     public static void testQueen() {
-        State state = new State(8);
-        Node start = new Node(state);
+        State initialState = new State(4);
+        Node start = new Node(initialState);
         Game game = new Game(start);
-        NodeListPrinter.printChessBoard(game.placeQueen());
+        System.out.println(game.placeQueen().size());
+
+        for (List<Node> list : game.placeQueen()) {
+            NodeListPrinter.printChessBoard(list);
+        }
+
     }
 
     public static void main(String[] args) throws Exception {

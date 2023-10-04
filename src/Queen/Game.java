@@ -15,7 +15,8 @@ public class Game {
         this.node = node;
     }
 
-    public List<Node> placeQueen() {
+    public List<List<Node>> placeQueen() {
+        List<List<Node>> result = new ArrayList<List<Node>>();
         Queue<Node> queue = new ConcurrentLinkedQueue<Node>();
         queue.add(node);
 
@@ -28,19 +29,19 @@ public class Game {
                     neighborState.setColumns(new ArrayList<Integer>(currentNodeState.getColumns()));
                     neighborState.addColumns(i);
                     if (!neighborState.isConflict()) {
+                        Node neighbor = new Node(neighborState, currentNode);
+
                         if (neighborState.isGoalState()) {
-                            Node goal = new Node(neighborState, currentNode);
                             BFS bfs = new BFS();
-                            return bfs.bfsFindPath(this.node, goal);
-                        } else {
-                            Node neighbor = new Node(neighborState, currentNode);
-                            queue.add(neighbor);
-                        }
+                            result.add(bfs.bfsFindPath(this.node, neighbor));
+                            bfs.setVisitedFalseAll(neighbor);
+                            break;
+                        } else queue.add(neighbor);
                     }
                 }
         }
 
-        return new ArrayList<Node>();
+        return result;
     }
 
 }
