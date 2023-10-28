@@ -34,19 +34,17 @@ public class App {
     }
 
     public static void testQueen() {
-        State initialState = new State(4);
+        State initialState = new State(8);
         Node start = new Node(initialState);
         Game game = new Game(start);
         System.out.println(game.placeQueen().size());
 
+        int count = 1;
         for (List<Node> list : game.placeQueen()) {
+            System.out.println(count);
             NodeListPrinter.printChessBoard(list);
+            count++;
         }
 
-    }
-
-    public static void main(String[] args) throws Exception {
-        // testGraph();
-        testQueen();
     }
 }
