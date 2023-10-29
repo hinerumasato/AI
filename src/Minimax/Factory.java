@@ -18,4 +18,24 @@ public class Factory {
             return wrostValue;
         }
     }
+
+    public static int alphaBetaPruning(Node node, boolean isMax, int alpha, int beta) {
+        if(node.getNeighbors().size() == 0)
+            return node.getValue();
+
+        if(isMax) {
+            for(Node neighbor : node.getNeighbors()) {
+                alpha = Math.max(alpha, alphaBetaPruning(neighbor, false, alpha, beta));
+                if(alpha >= beta) break;
+            }
+            return alpha;
+        }
+        else {
+            for(Node neighbor : node.getNeighbors()) {
+                beta = Math.min(beta, alphaBetaPruning(neighbor, true, alpha, beta));
+                if(alpha >= beta) break;
+            }
+            return beta;
+        }
+    }
 }
