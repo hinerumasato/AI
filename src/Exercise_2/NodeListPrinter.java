@@ -1,7 +1,5 @@
-package Graph;
+package Exercise_2;
 import java.util.List;
-
-import Queen.State;
 
 public class NodeListPrinter {
     public static void print(List<Node> nodes) {

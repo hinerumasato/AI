@@ -1,12 +1,9 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-import Graph.BFS;
-import Graph.Node;
-import Graph.NodeListPrinter;
-import Queen.Game;
-import Queen.State;
+import Exercise_2.BFS;
+import Exercise_2.Node;
+import Exercise_2.NodeListPrinter;
 
 public class App {
 
@@ -33,18 +30,7 @@ public class App {
         NodeListPrinter.print(bfs.bfsFindPath(startNode, node8));
     }
 
-    public static void testQueen() {
-        State initialState = new State(8);
-        Node start = new Node(initialState);
-        Game game = new Game(start);
-        System.out.println(game.placeQueen().size());
-
-        int count = 1;
-        for (List<Node> list : game.placeQueen()) {
-            System.out.println(count);
-            NodeListPrinter.printChessBoard(list);
-            count++;
-        }
-
+    public static void main(String[] args) {
+        
     }
 }

@@ -1,4 +1,4 @@
-package Queen;
+package Exercise_2;
 
 import java.util.ArrayList;
 import java.util.HashSet;

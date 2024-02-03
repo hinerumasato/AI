@@ -1,12 +1,9 @@
-package Queen;
+package Exercise_2;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
-
-import Graph.BFS;
-import Graph.Node;
 
 public class Game {
     private Node node;
@@ -42,6 +39,16 @@ public class Game {
         }
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        State initialState = new State(8);
+        Node start = new Node(initialState);
+        Game game = new Game(start);
+        System.out.println(game.placeQueen().size());
+
+        for (List<Node> list : game.placeQueen())
+            NodeListPrinter.printChessBoard(list);
     }
 
 }
